@@ -20,7 +20,7 @@ class Config(object):
         self.teacher_save_path = 'saved_dict/teacher.txt'        # 模型训练结果
         self.student_save_path = 'saved_dict/student.txt'        # 模型训练结果
 
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # 设备
+        self.device = torch.device('cuda')   # 设备
 
         self.train_teacher = 0
         self.train_student = 1
