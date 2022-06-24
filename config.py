@@ -17,10 +17,10 @@ class Config(object):
             'data/class_multi1.txt').readlines()]                                # 类别名单
         self.train_path = 'data/train.json'
         self.test_path = 'data/test.json'
-        self.teacher_save_path = 'saved_dict/teacher.txt'        # 模型训练结果
-        self.student_save_path = 'saved_dict/student.txt'        # 模型训练结果
+        self.teacher_save_path = 'saved_dict/teacher.ckpt'        # 模型训练结果
+        self.student_save_path = 'saved_dict/student.ckpt'        # 模型训练结果
 
-        self.device = torch.device('cuda')   # 设备
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # 设备
 
         self.train_teacher = 0
         self.train_student = 1
