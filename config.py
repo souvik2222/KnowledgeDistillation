@@ -13,8 +13,7 @@ class Config(object):
 
     """配置参数"""
     def __init__(self):
-        self.class_list = [x.strip() for x in open(
-            'data/class_multi1.txt').readlines()]                                # 类别名单
+        self.class_list = [x.strip() for x in open('data/class_multi1.txt').readlines()]                                # 类别名单
         self.train_path = 'data/train.json'
         self.test_path = 'data/test.json'
         self.teacher_save_path = 'saved_dict/teacher.ckpt'        # 模型训练结果
@@ -32,6 +31,6 @@ class Config(object):
         self.batch_size = 64                                      # 128mini-batch大小
         self.pad_size = 32                                           # 每句话处理成的长度(短填长切)
         self.learning_rate =  5e-4                                    # 学习率
-        self.bert_path = 'KnowledgeDistillation/bert_pretrain'
+        self.bert_path = 'bert_pretrain'
         self.tokenizer = BertTokenizer.from_pretrained(self.bert_path)
         self.hidden_size = 768
